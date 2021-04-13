@@ -1,4 +1,4 @@
-export interface User{
+export interface Diary{
     id?: string;
     title: string;
     type: 'private' | 'public';
