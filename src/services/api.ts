@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
-//import { showAlert } from '../util';
+import { showAlert } from '../util';
 
 const http: AxiosInstance = axios.create({
     baseURL: 'https://diaries.app'
@@ -8,7 +8,7 @@ const http: AxiosInstance = axios.create({
 http.defaults.headers.post['Content-Type'] = 'application/json';
 
 http.interceptors.response.use(
-    async (response: AxiosResponse): Promise =>{
+    async (response: AxiosResponse): Promise<any> =>{
         if(response.status >=200 && response.status < 300){
             return response.data;
         }
