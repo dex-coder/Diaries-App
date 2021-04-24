@@ -1,6 +1,6 @@
 import { Response, Request } from 'miragejs';
 import { handleErrors } from '../server';
-import { User } from '../../../interfaces/user';
+import { User } from '../../../interfaces/user.interface';
 import { randomBytes } from 'crypto';
 import { useStore } from 'react-redux';
 import Schema from 'miragejs/orm/schema';

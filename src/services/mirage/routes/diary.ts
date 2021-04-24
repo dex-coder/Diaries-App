@@ -1,9 +1,9 @@
 import { Response, Request } from "miragejs";
-import { Diary } from "../../../interfaces/diary";
-import { User } from "../../../interfaces/user";
+import { Diary } from "../../../interfaces/diary.interface";
+import { User } from "../../../interfaces/user.interface";
 import { handleErrors } from "../server";
 import dayjs from "dayjs";
-import { Entry } from "../../../interfaces/entry";
+import { Entry } from "../../../interfaces/entry.interface";
 
 export const create = (
   schema: any,

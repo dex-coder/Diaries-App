@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Entry } from '../../interfaces/entry';
+import { Entry } from '../../interfaces/entry.interface';
 
 interface EditorState {
   canEdit: boolean;
