@@ -16,16 +16,14 @@ const DiaryEntriesList: FC = () => {
 
   useEffect(() => {
     if (id != null) {
-      http
-        .get<null, { entries: Entry[] }>(`/diaries/entries/${id}`)
-        .then(({ entries: _entries }) => {
-          if (_entries) {
-            const sortByLastUpdated = _entries.sort((a, b) => {
-              return dayjs(b.updatedAt).unix() - dayjs(a.updatedAt).unix();
-            });
-            dispatch(setEntries(sortByLastUpdated));
-          }
-        });
+      http.get<Entry>(`/diaries/entries/${id}`).then(({ entries }: any) => {
+        if (entries) {
+          const sortByLastUpdated = entries.sort((a: any, b: any) => {
+            return dayjs(b.updatedAt).unix() - dayjs(a.updatedAt).unix();
+          });
+          dispatch(setEntries(sortByLastUpdated));
+        }
+      });
     }
   }, [id, dispatch]);
 
